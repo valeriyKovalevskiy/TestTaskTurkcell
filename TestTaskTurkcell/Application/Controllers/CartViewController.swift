@@ -1,5 +1,5 @@
 //
-//  FeedViewController.swift
+//  CartViewController.swift
 //  TestTaskTurkcell
 //
 //  Created by Valeriy Kovalevskiy on 1/15/21.
@@ -9,19 +9,22 @@ import UIKit
 import Foundation
 
 //swiftlint:disable image_name_initialization
-final class FeedViewController: UIViewController {
-    // MARK: - Properties
-    let viewModel = CartViewModel()
+final class CartViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
+    
+    // MARK: - Properties
+    var viewModel = CartViewModel() {
+        didSet {
+            viewModel.delegate = self
+        }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        setupCollectionView()
-        setupDataSource()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -31,64 +34,40 @@ final class FeedViewController: UIViewController {
     }
     
     deinit {
-        print("collection view deinit")
+        print("cart view deinit")
     }
     
     // MARK: - Private
     private func setupView() {
         title = "Feed"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        setupCollectionView()
     }
     
     private func setupCollectionView() {
-        let nib = UINib(nibName: FeedCollectionViewCell.reuseIdentifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: FeedCollectionViewCell.reuseIdentifier)
+        let nib = UINib(nibName: CartCollectionViewCell.reuseIdentifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: CartCollectionViewCell.reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
     }
-    
-    private func setupDataSource() {
+}
 
-        viewModel.getCartItems { [weak self] in
-            self?.collectionView.reloadData()
-        }
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "1")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfdfsggfd", image: UIImage(named: "2")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "3")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfd", image: UIImage(named: "4")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfd", image: UIImage(named: "5")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "6")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "7")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfdfsggfd", image: UIImage(named: "8")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfdfsggfdfsggfdfsggfd", image: UIImage(named: "9")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "20")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfdfsggfdfsggfdfsggfdfsggfd", image: UIImage(named: "11")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfdfsggfdfsggfd", image: UIImage(named: "12")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "13")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "14")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "15")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "10")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "16")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "17")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "20")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "18")! ))
-//        datasource.append(CartItem(price: "124", description: "fsggfd", image: UIImage(named: "19")! ))
-
+// MARK:
+extension CartViewController: CartViewModelDelegate {
+    func updateCollectionView() {
+        self.collectionView.reloadData()
     }
 }
 
 // MARK: - Collection View Delegate
-extension FeedViewController: UICollectionViewDelegate {
+extension CartViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let item = viewModel.dataSource.products[indexPath.item]
-//        collectionView.cellForItem(at: indexPath)?.shake()
-        
-        let storyboard = UIStoryboard(name: Constants.Controllers.FeedItemDetailsViewController, bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.FeedItemDetailsViewController) as? FeedItemDetailsViewController {
+        let item = viewModel.cartItemsArray[indexPath.item]
+        let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
             controller.image = UIImage(named: "1")!
             controller.descriptionText = item.name
             controller.priceText = "\(item.price)"
@@ -99,31 +78,31 @@ extension FeedViewController: UICollectionViewDelegate {
 }
 
 // MARK: - Collection View Data Source
-extension FeedViewController: UICollectionViewDataSource {
+extension CartViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        viewModel.dataSource.products.count
+        viewModel.cartItemsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? FeedCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? CartCollectionViewCell else {
             fatalError("Wrong cell")
         }
         
-        let item = viewModel.dataSource.products[indexPath.item]
-        cell.update(desctiption: item.name,
+        let item = viewModel.cartItemsArray[indexPath.item]
+        cell.update(name: item.name,
                     price: "\(item.price)",
-                    imageUrl: item.imageUrl)
+                    image: item.image)
         return cell
     }
 }
 
 // MARK: - Collection View Flow Layout Delegate
-extension FeedViewController: UICollectionViewDelegateFlowLayout {
+extension CartViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

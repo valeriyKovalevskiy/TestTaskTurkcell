@@ -7,22 +7,17 @@
 
 import UIKit
 
-class ImageProvider {
+final class ImageProvider {
 
-    
     func loadImage(from imageUrl: String, completion: @escaping (UIImage) -> Void) {
         
         ServerCommunication.getImage(from: imageUrl, completion: { [weak self] (response, error) in
-            guard let strongSelf = self else { return }
-            
             if let response = response, let image = response["image"] as? UIImage {
                 completion(image)
             } else if let error = error {
-                print(error)
+                // TODO: - handle errors
             }
-        }, progressHandler: { (progress) in
-            //ignore
-        })
+        }, progressHandler: { _ in })
     }
 }
 

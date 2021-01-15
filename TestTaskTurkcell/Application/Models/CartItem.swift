@@ -8,9 +8,9 @@
 import UIKit
 import Foundation
 
-struct CartItem: Codable {
+struct CartItem: Equatable {
     let id: String
     let name: String
     let price: Int
-    let imageUrl: UIImage
+    let image: UIImage
 }

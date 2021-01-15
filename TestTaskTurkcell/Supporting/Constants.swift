@@ -8,7 +8,6 @@ import UIKit
 
 struct Constants {
 
-    
     struct Storage {
         static let ModelName = "TestTaskTurkcell"
     }
@@ -19,7 +18,7 @@ struct Constants {
     
     struct Controllers {
         static let SplashViewController = "SplashViewController"
-        static let FeedViewController = "FeedViewController"
-        static let FeedItemDetailsViewController = "FeedItemDetailsViewController"
+        static let CartViewController = "CartViewController"
+        static let CartItemViewController = "CartItemViewController"
     }
 }

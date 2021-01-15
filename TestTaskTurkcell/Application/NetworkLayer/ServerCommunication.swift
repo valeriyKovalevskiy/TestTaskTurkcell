@@ -3,7 +3,6 @@ import Foundation
 typealias CompletionBlock = (_ response: [String: Any]?, _ error: Error?) -> Void
 
 final class ServerCommunication {
-    
     // MARK: - Cart Requests
     static func getCartList(completion: @escaping CompletionBlock) {
         

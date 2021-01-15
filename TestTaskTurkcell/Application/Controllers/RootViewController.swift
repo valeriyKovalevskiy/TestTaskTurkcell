@@ -19,19 +19,13 @@ final class RootViewController: UIViewController {
     }
 
     // MARK: - Internal Methods
-    func showFeedViewController() {
-        let storyboard = UIStoryboard(name: Constants.Controllers.FeedViewController, bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.FeedViewController) as? FeedViewController {
-            let feedViewController = UINavigationController(rootViewController: controller)
-            animateFadeTransition(to: feedViewController)
-        }
-    }
-    
-    func showTestViewController() {
-        let storyboard = UIStoryboard(name: "TestViewController", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "TestViewController") as? TestViewController {
-            let feedViewController = UINavigationController(rootViewController: controller)
-            animateFadeTransition(to: feedViewController)
+    func showCartViewController(with viewModel: CartViewModel) {
+        let storyboard = UIStoryboard(name: Constants.Controllers.CartViewController, bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartViewController) as? CartViewController {
+            controller.viewModel = viewModel
+            let cartViewController = UINavigationController(rootViewController: controller)
+            
+            animateFadeTransition(to: cartViewController)
         }
     }
 

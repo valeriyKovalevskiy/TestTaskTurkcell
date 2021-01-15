@@ -1,6 +1,5 @@
 import UIKit
 
-// swiftlint:disable non_localized_sentence
 // swiftlint:disable file_length
 enum UIDeviceSize {
     case i3_5Inch
@@ -354,5 +353,4 @@ public extension UIDevice {
         return Model.unrecognized
     }
 }
-// swiftlint:enable non_localized_sentence
 // swiftlint:enable file_length

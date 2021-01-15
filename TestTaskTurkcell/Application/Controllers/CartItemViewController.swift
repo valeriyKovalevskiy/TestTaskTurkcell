@@ -1,5 +1,5 @@
 //
-//  FeedItemDetailsViewController.swift
+//  CartItemViewController.swift
 //  TestTaskTurkcell
 //
 //  Created by Valeriy Kovalevskiy on 1/15/21.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class FeedItemDetailsViewController: UIViewController {
-
+final class CartItemViewController: UIViewController {
+    // MARK: - Outlets
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
@@ -23,9 +23,5 @@ final class FeedItemDetailsViewController: UIViewController {
         imageView.image = image
         descriptionLabel.text = descriptionText
         priceLabel.text = priceText
-    }
-    
-    @IBAction private func testButton(_ sender: UIButton) {
-        AppDelegate.shared.rootViewController.showTestViewController()
     }
 }

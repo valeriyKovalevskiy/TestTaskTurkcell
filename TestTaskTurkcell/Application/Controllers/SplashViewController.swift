@@ -14,7 +14,6 @@ final class SplashViewController: UIViewController {
         super.viewDidLoad()
 
         createNetworkingRequests()
-        setInitialController()
     }
     
     deinit {
@@ -25,14 +24,14 @@ final class SplashViewController: UIViewController {
     private func createNetworkingRequests() {
         loadingActivityIndicator.startAnimating()
         
-
-
-    }
-
-    private func setInitialController() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            AppDelegate.shared.rootViewController.showFeedViewController()
-            self.loadingActivityIndicator.stopAnimating()
+        let cartViewModel = CartViewModel()
+        cartViewModel.downloadCartItems { completed in
+            if completed {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.loadingActivityIndicator.stopAnimating()
+                    AppDelegate.shared.rootViewController.showCartViewController(with: cartViewModel)
+                }
+            }
         }
     }
 }

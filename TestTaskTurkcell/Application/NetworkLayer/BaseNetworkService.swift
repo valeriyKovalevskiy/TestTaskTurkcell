@@ -23,7 +23,7 @@ enum Requests {
 }
 
  class BaseNetworkService {
-    
+    // MARK: - Properties
     static let alamofireManager = AlamofireManager(configuration: BaseNetworkService.configuration)
     static let baseUrl = "https://s3-eu-west-1.amazonaws.com/developer-application-test"
     static let configuration: URLSessionConfiguration = {
@@ -34,7 +34,10 @@ enum Requests {
         return conf
     }()
 
-    static func handleResponseData(_ response: [String: Any]?, errorHandler: NetworkErrorHandler, successHandler: NetworkSuccessHandler) {
+    static func handleResponseData(_ response: [String: Any]?,
+                                   errorHandler: NetworkErrorHandler,
+                                   successHandler: NetworkSuccessHandler) {
+        
         if let errorDict = response?["error"] as? [String: Any] {
 //           let error = IMError(errorDict: errorDict) {
 //            errorHandler(error)
@@ -46,6 +49,7 @@ enum Requests {
     class func parseResponse(_ response: DataResponse<Any>,
                              successHandler: @escaping NetworkSuccessHandler,
                              errorHandler: @escaping NetworkErrorHandler) {
+        
         if response.result.isSuccess {
             if  let data = response.result.value as? [String: AnyObject] {
                 print("Response url processing... \(String(describing: response.response?.url))")
@@ -60,12 +64,17 @@ enum Requests {
         }
     }
 
-    class func sendRequest(_ method: HTTPMethod, request: String, successHandler: @escaping NetworkSuccessHandler, errorHandler: @escaping NetworkErrorHandler) {
-        let alamofireManager = BaseNetworkService.alamofireManager
+    class func sendRequest(_ method: HTTPMethod,
+                           request: String,
+                           successHandler: @escaping NetworkSuccessHandler,
+                           errorHandler: @escaping NetworkErrorHandler) {
+        
         let url = "\(BaseNetworkService.baseUrl)/\(request)"
-        let request = alamofireManager.request(url, method: method).validate(statusCode: 200..<300).responseJSON { (response) in
-            print(response.request?.url)
-            parseResponse(response, successHandler: successHandler, errorHandler: errorHandler)
+        let request = BaseNetworkService.alamofireManager.request(url, method: method)
+        request.validate(statusCode: 200..<300).responseJSON { response in
+            parseResponse(response,
+                          successHandler: successHandler,
+                          errorHandler: errorHandler)
         }
     }
 

@@ -1,4 +1,6 @@
 excluded:
+    - TestTaskTurkcellUITests
+    - TestTaskTurkcellTests
     - Carthage
     - Pods
 
@@ -48,18 +50,6 @@ custom_rules:
         regex: '^\s*[a-z]'
         match_kinds: comment
         message: "Comment starting with lowercase letter - did you forget to delete old code?"
-
-    non_localized_word:
-        regex: '(?<!NSLocalizedString\()"[[:upper:]][[:lower:]]+"'
-        message: "Wrap string in NSLocalizedString()"
-
-    non_localized_sentence:
-        regex: '(?<!NSLocalizedString\(|fatalError\(|\S)"[^"]+ [^"]*"'
-        message: "Wrap string in NSLocalizedString()"
-
-    non_localized_multiline:
-        regex: '(?<!NSLocalizedString\()""".*?"""'
-        message: "Wrap string in NSLocalizedString()"
 
     print_using:
         regex: 'print'

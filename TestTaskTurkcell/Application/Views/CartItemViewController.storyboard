@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed Item Details View Controller-->
+        <!--Cart Item View Controller-->
         <scene sceneID="Sge-AI-RAy">
             <objects>
-                <viewController storyboardIdentifier="FeedItemDetailsViewController" id="U7W-81-6Wy" customClass="FeedItemDetailsViewController" customModule="TestTaskTurkcell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartItemViewController" id="U7W-81-6Wy" customClass="CartItemViewController" customModule="TestTaskTurkcell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bK-eH-LiQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,19 +40,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOu-RH-f3d">
-                                <rect key="frame" x="184" y="444" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="testButton:" destination="U7W-81-6Wy" eventType="touchUpInside" id="9tw-d0-G5U"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Ys-WA-Wqq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OOu-RH-f3d" firstAttribute="top" secondItem="Gt9-bM-jJu" secondAttribute="bottom" id="4ZY-by-CMx"/>
-                            <constraint firstItem="OOu-RH-f3d" firstAttribute="centerX" secondItem="5bK-eH-LiQ" secondAttribute="centerX" id="6IQ-UX-STn"/>
                             <constraint firstItem="xlc-Us-75O" firstAttribute="top" secondItem="T1M-qo-anq" secondAttribute="bottom" constant="50" id="N9G-kU-8WF"/>
                             <constraint firstItem="T1M-qo-anq" firstAttribute="top" secondItem="1Ys-WA-Wqq" secondAttribute="top" constant="50" id="RZ8-ON-he2"/>
                             <constraint firstItem="xlc-Us-75O" firstAttribute="leading" secondItem="1Ys-WA-Wqq" secondAttribute="leading" constant="50" id="d6a-HY-52O"/>

@@ -1,9 +1,8 @@
 //
-//  PropertyRequests.swift
-//  IMMOMIG
+//  CartRequests.swift
+//  TestTaskTurkcell
 //
-//  Created by Maksym Lazebnyi on 1/15/21.
-//  Copyright © 2016 Maksym Lazebnyi. All rights reserved.
+//  Created by Valeriy Kovalevskiy on 1/15/21.
 //
 
 import Foundation

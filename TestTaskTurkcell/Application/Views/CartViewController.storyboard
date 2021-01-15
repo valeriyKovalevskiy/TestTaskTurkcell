@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
+        <!--Cart View Controller-->
         <scene sceneID="2Qg-CX-36K">
             <objects>
-                <viewController storyboardIdentifier="FeedViewController" id="WcF-f5-5Cm" customClass="FeedViewController" customModule="TestTaskTurkcell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" id="WcF-f5-5Cm" customClass="CartViewController" customModule="TestTaskTurkcell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nOe-Eh-NHW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
