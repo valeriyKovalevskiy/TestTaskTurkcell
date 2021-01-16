@@ -76,6 +76,7 @@ extension CartViewController: CartViewModelDelegate {
                 
             case .badConnection:
                 self.title = "bad connection"
+                self.loadingView.hide()
                 self.refreshControl.endRefreshing()
                 self.badConnectionView.show()
                 
