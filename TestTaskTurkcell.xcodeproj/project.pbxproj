@@ -12,8 +12,15 @@
 		2635296125AEC3C2007A14BF /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2635296025AEC3C2007A14BF /* BaseNetworkService.swift */; };
 		2635299025AEC741007A14BF /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2635298F25AEC741007A14BF /* AlamofireManager.swift */; };
 		263529A125AECB44007A14BF /* CartRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263529A025AECB44007A14BF /* CartRequests.swift */; };
+		26353F2525B2CFB400C6A155 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26353F2425B2CFB400C6A155 /* LoadingView.xib */; };
+		26353F2A25B2D02400C6A155 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26353F2925B2D02400C6A155 /* LoadingView.swift */; };
+		26353F3D25B2D85000C6A155 /* BadConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26353F3C25B2D85000C6A155 /* BadConnectionView.swift */; };
+		26353F4225B2D85700C6A155 /* BadConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26353F4125B2D85700C6A155 /* BadConnectionView.xib */; };
 		2642802F25B171E60063ED9A /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642802E25B171E60063ED9A /* ServerCommunication.swift */; };
 		2642804325B174ED0063ED9A /* ImagesRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642804225B174ED0063ED9A /* ImagesRequests.swift */; };
+		2644F7D525B2178E008A6E41 /* CartItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7D425B2178E008A6E41 /* CartItemViewModel.swift */; };
+		2644F7DD25B21CA1008A6E41 /* DetailedCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7DC25B21CA1008A6E41 /* DetailedCartItem.swift */; };
+		2644F7E225B22853008A6E41 /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7E125B22853008A6E41 /* ParsingService.swift */; };
 		2647D55D25A597DD00EEA578 /* CartItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647D55C25A597DD00EEA578 /* CartItemViewController.swift */; };
 		2647D56225A597F200EEA578 /* CartItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2647D56125A597F200EEA578 /* CartItemViewController.storyboard */; };
 		2647D56725A5A64700EEA578 /* UIImage+CropRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647D56625A5A64700EEA578 /* UIImage+CropRatio.swift */; };
@@ -102,8 +109,15 @@
 		2635296025AEC3C2007A14BF /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		2635298F25AEC741007A14BF /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		263529A025AECB44007A14BF /* CartRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRequests.swift; sourceTree = "<group>"; };
+		26353F2425B2CFB400C6A155 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		26353F2925B2D02400C6A155 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		26353F3C25B2D85000C6A155 /* BadConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadConnectionView.swift; sourceTree = "<group>"; };
+		26353F4125B2D85700C6A155 /* BadConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadConnectionView.xib; sourceTree = "<group>"; };
 		2642802E25B171E60063ED9A /* ServerCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 		2642804225B174ED0063ED9A /* ImagesRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRequests.swift; sourceTree = "<group>"; };
+		2644F7D425B2178E008A6E41 /* CartItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemViewModel.swift; sourceTree = "<group>"; };
+		2644F7DC25B21CA1008A6E41 /* DetailedCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCartItem.swift; sourceTree = "<group>"; };
+		2644F7E125B22853008A6E41 /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		2647D55C25A597DD00EEA578 /* CartItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemViewController.swift; sourceTree = "<group>"; };
 		2647D56125A597F200EEA578 /* CartItemViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CartItemViewController.storyboard; sourceTree = "<group>"; };
 		2647D56625A5A64700EEA578 /* UIImage+CropRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CropRatio.swift"; sourceTree = "<group>"; };
@@ -198,12 +212,31 @@
 		2635295F25AEC397007A14BF /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2644F7E125B22853008A6E41 /* ParsingService.swift */,
 				2635298F25AEC741007A14BF /* AlamofireManager.swift */,
 				2635296025AEC3C2007A14BF /* BaseNetworkService.swift */,
 				2642802E25B171E60063ED9A /* ServerCommunication.swift */,
 				2642804725B174F00063ED9A /* Requests */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		26353F2325B2CFA900C6A155 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				26353F2425B2CFB400C6A155 /* LoadingView.xib */,
+				26353F2925B2D02400C6A155 /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		26353F2E25B2D16E00C6A155 /* BadConnectionView */ = {
+			isa = PBXGroup;
+			children = (
+				26353F4125B2D85700C6A155 /* BadConnectionView.xib */,
+				26353F3C25B2D85000C6A155 /* BadConnectionView.swift */,
+			);
+			path = BadConnectionView;
 			sourceTree = "<group>";
 		};
 		2642804725B174F00063ED9A /* Requests */ = {
@@ -371,6 +404,7 @@
 			children = (
 				264F043325B1AC8A00CC30A2 /* Cart.swift */,
 				264F043825B1AC9700CC30A2 /* CartItem.swift */,
+				2644F7DC25B21CA1008A6E41 /* DetailedCartItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +412,7 @@
 		2678BA1C25A327A300950006 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2644F7D425B2178E008A6E41 /* CartItemViewModel.swift */,
 				264F03BA25B1829300CC30A2 /* CartViewModel.swift */,
 				264F045925B1E05D00CC30A2 /* DataProviders */,
 			);
@@ -387,6 +422,8 @@
 		2678BA1D25A327A800950006 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26353F2E25B2D16E00C6A155 /* BadConnectionView */,
+				26353F2325B2CFA900C6A155 /* LoadingView */,
 				2647D56125A597F200EEA578 /* CartItemViewController.storyboard */,
 				2678BA4925A32C7800950006 /* CartViewController.storyboard */,
 				2678B98F25A3241300950006 /* LaunchScreen.storyboard */,
@@ -521,12 +558,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26353F4225B2D85700C6A155 /* BadConnectionView.xib in Resources */,
 				2678B99125A3241300950006 /* LaunchScreen.storyboard in Resources */,
 				2678B9DC25A3260300950006 /* Roboto-Regular.ttf in Resources */,
 				2678B9CB25A325C500950006 /* Colors.xcassets in Resources */,
 				2678B9D925A3260300950006 /* Roboto-Medium.ttf in Resources */,
 				2678BA4525A32C1600950006 /* SplashViewController.storyboard in Resources */,
 				2678B9D625A3260300950006 /* Roboto-Bold.ttf in Resources */,
+				26353F2525B2CFB400C6A155 /* LoadingView.xib in Resources */,
 				2678B98E25A3241300950006 /* Assets.xcassets in Resources */,
 				2678BA9525A3457000950006 /* CartCollectionViewCell.xib in Resources */,
 				2678BA4A25A32C7800950006 /* CartViewController.storyboard in Resources */,
@@ -622,9 +661,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				264F03B625B17E9500CC30A2 /* CartDataProvider.swift in Sources */,
+				2644F7DD25B21CA1008A6E41 /* DetailedCartItem.swift in Sources */,
 				2642802F25B171E60063ED9A /* ServerCommunication.swift in Sources */,
 				2635299025AEC741007A14BF /* AlamofireManager.swift in Sources */,
 				2678B9ED25A3265C00950006 /* UIView+IBInspectable.swift in Sources */,
+				26353F2A25B2D02400C6A155 /* LoadingView.swift in Sources */,
 				2678BA6A25A33E1000950006 /* Reach.swift in Sources */,
 				2635296125AEC3C2007A14BF /* BaseNetworkService.swift in Sources */,
 				2678BA0A25A3276B00950006 /* UITextViewHelper.swift in Sources */,
@@ -636,11 +677,14 @@
 				2678BA5D25A337F800950006 /* CoreDataStack.swift in Sources */,
 				2678B9F425A3274000950006 /* Constants.swift in Sources */,
 				2642804325B174ED0063ED9A /* ImagesRequests.swift in Sources */,
+				2644F7E225B22853008A6E41 /* ParsingService.swift in Sources */,
 				264F043425B1AC8A00CC30A2 /* Cart.swift in Sources */,
 				2678B9E625A3262A00950006 /* UIFont+Extension.swift in Sources */,
 				2678BA3D25A32AA900950006 /* SplashViewController.swift in Sources */,
 				2678BA0D25A3276B00950006 /* UILabelHelper.swift in Sources */,
+				2644F7D525B2178E008A6E41 /* CartItemViewModel.swift in Sources */,
 				2678BA3525A32A7800950006 /* RootViewController.swift in Sources */,
+				26353F3D25B2D85000C6A155 /* BadConnectionView.swift in Sources */,
 				264F043925B1AC9700CC30A2 /* CartItem.swift in Sources */,
 				264F03BB25B1829300CC30A2 /* CartViewModel.swift in Sources */,
 				2647D56725A5A64700EEA578 /* UIImage+CropRatio.swift in Sources */,
@@ -841,7 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3599HR3Q7R;
+				DEVELOPMENT_TEAM = 2UV3UVQ6CK;
 				INFOPLIST_FILE = "$(SRCROOT)/TestTaskTurkcell/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -862,7 +906,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3599HR3Q7R;
+				DEVELOPMENT_TEAM = 2UV3UVQ6CK;
 				INFOPLIST_FILE = "$(SRCROOT)/TestTaskTurkcell/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

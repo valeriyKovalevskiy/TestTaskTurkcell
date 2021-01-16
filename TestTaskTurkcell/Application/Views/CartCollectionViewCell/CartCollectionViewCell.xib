@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,8 +29,8 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-RC-3zv">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZLS-Ll-v0C">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="266.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZLS-Ll-v0C">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZLS-Ll-v0C" secondAttribute="height" multiplier="4:3" id="DTn-f1-i7G"/>
                                     <constraint firstAttribute="width" secondItem="ZLS-Ll-v0C" secondAttribute="height" multiplier="1:1" id="o2x-ab-568"/>
@@ -51,21 +52,21 @@
                                 </variation>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D2Z-Ir-tb2">
-                                <rect key="frame" x="0.0" y="276.5" width="500" height="23.5"/>
+                                <rect key="frame" x="0.0" y="235" width="500" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Food Food Food Food " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlq-ob-DR8">
-                                        <rect key="frame" x="0.0" y="0.0" width="245" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price $$$" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqK-Vi-fQ2">
-                                        <rect key="frame" x="255" y="0.0" width="245" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="500" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact">
                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
@@ -97,14 +98,14 @@
                         </variation>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="ka7-RC-3zv" firstAttribute="leading" secondItem="bEr-qx-kTP" secondAttribute="leading" id="9ui-vv-mfd"/>
                     <constraint firstItem="ZLS-Ll-v0C" firstAttribute="width" secondItem="bEr-qx-kTP" secondAttribute="width" multiplier="0.8" id="Cbt-QF-7tA"/>
                     <constraint firstAttribute="trailing" secondItem="ka7-RC-3zv" secondAttribute="trailing" id="SMW-fs-BFH"/>
                     <constraint firstItem="ZLS-Ll-v0C" firstAttribute="height" secondItem="bEr-qx-kTP" secondAttribute="height" id="hEY-LH-dvx"/>
                     <constraint firstItem="ZLS-Ll-v0C" firstAttribute="width" secondItem="bEr-qx-kTP" secondAttribute="width" id="mwY-8A-bPl"/>
-                    <constraint firstItem="ZLS-Ll-v0C" firstAttribute="height" relation="lessThanOrEqual" secondItem="bEr-qx-kTP" secondAttribute="height" multiplier="0.9" id="w7H-VI-PJW"/>
+                    <constraint firstItem="ZLS-Ll-v0C" firstAttribute="height" relation="lessThanOrEqual" secondItem="bEr-qx-kTP" secondAttribute="height" multiplier="0.75" id="w7H-VI-PJW"/>
                     <constraint firstAttribute="bottom" secondItem="ka7-RC-3zv" secondAttribute="bottom" id="w8y-JM-El3"/>
                     <constraint firstItem="ka7-RC-3zv" firstAttribute="top" secondItem="bEr-qx-kTP" secondAttribute="top" id="z4U-gh-wSM"/>
                 </constraints>
@@ -144,6 +145,12 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="1" width="1080" height="1619"/>
+        <image name="placeholder" width="500" height="375"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

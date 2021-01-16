@@ -7,145 +7,145 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81092A53-B0D4-4059-8B5B-DB65D9D96704"
-            shouldBeEnabled = "Yes"
+            uuid = "614499EC-6EA8-45D2-ABD1-72AFB02D0844"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestTaskTurkcell/Application/Networking/ParsingManager.swift"
+            filePath = "TestTaskTurkcell/Application/Controllers/CartViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "parse(from:completion:)"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4A37B885-787F-4289-B286-233F95601285"
-            shouldBeEnabled = "Yes"
+            uuid = "12735BC7-E6D9-41EE-9557-D24D9D50242E"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestTaskTurkcell/Application/Networking/Requests/CartRequests.swift"
+            filePath = "TestTaskTurkcell/Application/Controllers/CartViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "getCartList(successHandler:errorHandler:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12735BC7-E6D9-41EE-9557-D24D9D50242E - 3881ff3d4ec61e84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestTaskTurkcell.CartViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TestTaskTurkcell"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vkovalevskiy/PetProjects/Pets/TestTaskTurkcell/TestTaskTurkcell/Application/Controllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  uuid = "12735BC7-E6D9-41EE-9557-D24D9D50242E - 4da02f8854a7ff05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TestTaskTurkcell.DetailedCartItem) -&gt; () in TestTaskTurkcell.CartViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TestTaskTurkcell"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vkovalevskiy/PetProjects/Pets/TestTaskTurkcell/TestTaskTurkcell/Application/Controllers/CartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6DFE0103-55D5-48FE-9131-9E05FEE5788B"
-            shouldBeEnabled = "Yes"
+            uuid = "150533C1-7DF0-4BC3-A5F3-77287949D091"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestTaskTurkcell/Application/Networking/ParsingManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
-            landmarkName = "parse(from:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD5FEF9D-7F6F-4E2E-A812-991F17A9FC16"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskTurkcell/Application/Networking/ParsingManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "parse(from:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FA52DD32-EBED-4366-BCD9-CB07794C299C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskTurkcell/Application/ViewModels/CartDataProvider.swift"
+            filePath = "TestTaskTurkcell/Application/NetworkLayer/ServerCommunication.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "CartDataProvider"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "61F71F42-6920-4658-B389-D1B5F4F51F36"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskTurkcell/Application/Controllers/ViewModels/CartDataProvider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "load(completion:)"
+            landmarkName = "getCartItemDetails(item:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0DAE71AD-D515-455F-99EB-47EFEB862ACC"
+            uuid = "AE177783-50F3-4A69-9A9A-CED45A3E635D"
             shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskTurkcell/Application/NetworkLayer/Requests/CartRequests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getCartItemDetails(for:successHandler:errorHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4AD28549-D5A0-420F-8E01-1270BCBE0F7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskTurkcell/Application/Controllers/ViewModels/DataProviders/CartDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loadItem(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D61ABE24-B4B4-4639-A3A2-EC9742B282BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskTurkcell/Application/Controllers/ViewModels/DataProviders/ImageProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "loadImage(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23667258-7A05-40A8-B709-6ECE40F7A8F8"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestTaskTurkcell/Application/Controllers/ViewModels/CartViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "cartResponse"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "cartItems"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "0DAE71AD-D515-455F-99EB-47EFEB862ACC - 7a77626c13875230"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestTaskTurkcell.CartViewModel.getCartItems(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "TestTaskTurkcell"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vkovalevskiy/PetProjects/Pets/TestTaskTurkcell/TestTaskTurkcell/Application/Controllers/ViewModels/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  uuid = "0DAE71AD-D515-455F-99EB-47EFEB862ACC - 132744f424d95ada"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TestTaskTurkcell.Cart) -&gt; () in TestTaskTurkcell.CartViewModel.getCartItems(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "TestTaskTurkcell"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vkovalevskiy/PetProjects/Pets/TestTaskTurkcell/TestTaskTurkcell/Application/Controllers/ViewModels/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "88">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -17,6 +17,7 @@ struct CartItemResponse: Codable {
     let price: Int
     let imageUrl: String
     
+    
     fileprivate enum CodingKeys: String, CodingKey {
         case id = "product_id"
         case name = "name"

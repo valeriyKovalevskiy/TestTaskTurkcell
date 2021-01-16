@@ -8,18 +8,29 @@
 import Foundation
 
 final class CartDataProvider {
-    func load(completion: @escaping (Cart) -> Void) {
+    func loadCartList(completion: @escaping (Cart) -> Void) {
         ServerCommunication.getCartList { (response, error) in
             if let error = error {
                 // TODO: - Handle
             }
-            if let response = response {
-                if let data = try? JSONSerialization.data(withJSONObject: response, options: []) {
-                    let decoder = JSONDecoder()
-                    if let decoded = try? decoder.decode(Cart.self, from: data) {
-                        completion(decoded)
-                    }
-                }
+            if let response = ParsingService<Cart>().parseObject(response) {
+                completion(response)
+            } else {
+                print("bad response \(response)")
+            }
+        }
+    }
+    
+    func loadItem(_ item: String, completion: @escaping (DetailedCartItemResponse) -> Void) {
+        ServerCommunication.getCartItemDetails(item: item) { (response, error) in
+            if let error = error {
+                // TODO: - Handle
+            }
+            
+            if let response = ParsingService<DetailedCartItemResponse>().parseObject(response) {
+                completion(response)
+            } else {
+                print("bad response \(response)")
             }
         }
     }

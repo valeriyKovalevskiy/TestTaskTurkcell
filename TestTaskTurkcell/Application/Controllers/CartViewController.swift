@@ -8,10 +8,16 @@
 import UIKit
 import Foundation
 
-//swiftlint:disable image_name_initialization
 final class CartViewController: UIViewController {
     // MARK: - Outlets
+    private var refreshControl: UIRefreshControl!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var loadingView: LoadingView!
+    @IBOutlet private weak var badConnectionView: BadConnectionView! {
+        didSet {
+            badConnectionView.delegate = self
+        }
+    }
     
     // MARK: - Properties
     var viewModel = CartViewModel() {
@@ -24,7 +30,8 @@ final class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        setupCollectionView()
+        setupRefreshControl()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -33,17 +40,7 @@ final class CartViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    deinit {
-        print("cart view deinit")
-    }
-    
     // MARK: - Private
-    private func setupView() {
-        title = "Feed"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        setupCollectionView()
-    }
-    
     private func setupCollectionView() {
         let nib = UINib(nibName: CartCollectionViewCell.reuseIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: CartCollectionViewCell.reuseIdentifier)
@@ -51,27 +48,75 @@ final class CartViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
     }
-}
-
-// MARK:
-extension CartViewController: CartViewModelDelegate {
-    func updateCollectionView() {
-        self.collectionView.reloadData()
+    
+    private func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshView), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+    }
+    
+    // MARK: - Actions
+    @objc private func refreshView(sender: UIRefreshControl) {
+        viewModel.downloadCartItems()
     }
 }
 
+// MARK: - ViewModel delegate
+extension CartViewController: CartViewModelDelegate {
+    func updateUI(for state: CartViewModel.ViewState) {
+        DispatchQueue.main.async {
+            switch state {
+            case .loaded:
+                self.title = "loaded"
+                self.loadingView.hide()
+                self.badConnectionView.hide()
+                self.refreshControl.endRefreshing()
+                self.collectionView.reloadData()
+                
+            case .badConnection:
+                self.title = "bad connection"
+                self.refreshControl.endRefreshing()
+                self.badConnectionView.show()
+                
+            case .loading:
+                self.title = "loading"
+                self.loadingView.show()
+                self.collectionView.reloadData()
+                
+            default:
+                self.title = "feed"
+                self.collectionView.reloadData()
+            }
+        }
+    }
+}
+
+extension CartViewController: BadConnectionViewDelegate {
+    func updateView() {
+        viewModel.downloadCartItems()
+    }
+}
 // MARK: - Collection View Delegate
 extension CartViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let item = viewModel.cartItemsArray[indexPath.item]
-        let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
-            controller.image = UIImage(named: "1")!
-            controller.descriptionText = item.name
-            controller.priceText = "\(item.price)"
-            self.navigationController?.pushViewController(controller, animated: true)
+        //        let selectedCell = collectionView.cellForItem(at: indexPath)
+        //        selectedCell?.isUserInteractionEnabled = false
+        let item = viewModel.cartItems[indexPath.item]
+        
+        viewModel.downloadDetailedItem(item: item.id) { [weak self] item in
+            let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
+            if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
+                controller.image = item.image
+                controller.nameText = item.name
+                controller.descriptionText = item.description
+                controller.priceText = "\(item.price)"
+                //                selectedCell?.isUserInteractionEnabled = true
+                self?.navigationController?.pushViewController(controller, animated: true)
+            }
+            
         }
     }
     
@@ -82,18 +127,16 @@ extension CartViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        viewModel.cartItemsArray.count
+        viewModel.cartItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? CartCollectionViewCell else {
-            fatalError("Wrong cell")
-        }
+                                                            for: indexPath) as? CartCollectionViewCell else { return UICollectionViewCell() }
         
-        let item = viewModel.cartItemsArray[indexPath.item]
+        let item = viewModel.cartItems[indexPath.item]
         cell.update(name: item.name,
                     price: "\(item.price)",
                     image: item.image)

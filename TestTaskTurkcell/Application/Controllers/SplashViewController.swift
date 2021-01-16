@@ -8,7 +8,9 @@
 import UIKit
 
 final class SplashViewController: UIViewController {
+    // MARK: - Outlets
     @IBOutlet private weak var loadingActivityIndicator: UIActivityIndicatorView!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +27,11 @@ final class SplashViewController: UIViewController {
         loadingActivityIndicator.startAnimating()
         
         let cartViewModel = CartViewModel()
-        cartViewModel.downloadCartItems { completed in
-            if completed {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.loadingActivityIndicator.stopAnimating()
-                    AppDelegate.shared.rootViewController.showCartViewController(with: cartViewModel)
-                }
-            }
+        cartViewModel.downloadCartItems()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.loadingActivityIndicator.stopAnimating()
+            AppDelegate.shared.rootViewController.showCartViewController(with: cartViewModel)
         }
     }
 }

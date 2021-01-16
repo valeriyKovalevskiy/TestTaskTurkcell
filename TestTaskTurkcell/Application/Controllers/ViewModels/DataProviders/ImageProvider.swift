@@ -12,10 +12,14 @@ final class ImageProvider {
     func loadImage(from imageUrl: String, completion: @escaping (UIImage) -> Void) {
         
         ServerCommunication.getImage(from: imageUrl, completion: { [weak self] (response, error) in
+            if let error = error {
+                // TODO: - handle errors
+            }
+            
             if let response = response, let image = response["image"] as? UIImage {
                 completion(image)
-            } else if let error = error {
-                // TODO: - handle errors
+            } else {
+                print("bad response \(response)")
             }
         }, progressHandler: { _ in })
     }
