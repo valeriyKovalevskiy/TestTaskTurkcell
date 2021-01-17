@@ -13,7 +13,10 @@ struct Constants {
     }
     
     struct Layout {
-        static let CollectionViewEdgeInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+        static let CollectionViewEdgeInsets = UIEdgeInsets(top: 20.0,
+                                                           left: 20.0,
+                                                           bottom: 20.0,
+                                                           right: 20.0)
     }
     
     struct Nibs {

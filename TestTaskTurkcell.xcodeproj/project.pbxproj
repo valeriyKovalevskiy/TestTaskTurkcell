@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2635294625AEBAB0007A14BF /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2635294525AEBAB0007A14BF /* UIView+ShakeAnimation.swift */; };
-		2635294D25AEBD38007A14BF /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2635294C25AEBD38007A14BF /* SelfConfiguringCell.swift */; };
 		2635296125AEC3C2007A14BF /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2635296025AEC3C2007A14BF /* BaseNetworkService.swift */; };
 		2635299025AEC741007A14BF /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2635298F25AEC741007A14BF /* AlamofireManager.swift */; };
 		263529A125AECB44007A14BF /* CartRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263529A025AECB44007A14BF /* CartRequests.swift */; };
@@ -16,10 +15,15 @@
 		26353F2A25B2D02400C6A155 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26353F2925B2D02400C6A155 /* LoadingView.swift */; };
 		26353F3D25B2D85000C6A155 /* BadConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26353F3C25B2D85000C6A155 /* BadConnectionView.swift */; };
 		26353F4225B2D85700C6A155 /* BadConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26353F4125B2D85700C6A155 /* BadConnectionView.xib */; };
+		263F24EC25B30F2C0080416B /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F24EB25B30F2C0080416B /* SelfConfiguringCell.swift */; };
+		263F24F425B30F550080416B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F24F325B30F550080416B /* BaseViewModel.swift */; };
+		263F24FD25B494990080416B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F24FC25B494990080416B /* UIDevice+Extension.swift */; };
+		263F250825B4C6400080416B /* CartItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F250725B4C6400080416B /* CartItemResponse.swift */; };
+		263F251025B4C6590080416B /* DetailedCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F250F25B4C6590080416B /* DetailedCartItem.swift */; };
 		2642802F25B171E60063ED9A /* ServerCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642802E25B171E60063ED9A /* ServerCommunication.swift */; };
 		2642804325B174ED0063ED9A /* ImagesRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642804225B174ED0063ED9A /* ImagesRequests.swift */; };
 		2644F7D525B2178E008A6E41 /* CartItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7D425B2178E008A6E41 /* CartItemViewModel.swift */; };
-		2644F7DD25B21CA1008A6E41 /* DetailedCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7DC25B21CA1008A6E41 /* DetailedCartItem.swift */; };
+		2644F7DD25B21CA1008A6E41 /* DetailedCartItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7DC25B21CA1008A6E41 /* DetailedCartItemResponse.swift */; };
 		2644F7E225B22853008A6E41 /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644F7E125B22853008A6E41 /* ParsingService.swift */; };
 		2647D55D25A597DD00EEA578 /* CartItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647D55C25A597DD00EEA578 /* CartItemViewController.swift */; };
 		2647D56225A597F200EEA578 /* CartItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2647D56125A597F200EEA578 /* CartItemViewController.storyboard */; };
@@ -105,7 +109,6 @@
 
 /* Begin PBXFileReference section */
 		2635294525AEBAB0007A14BF /* UIView+ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShakeAnimation.swift"; sourceTree = "<group>"; };
-		2635294C25AEBD38007A14BF /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelfConfiguringCell.swift; path = TestTaskTurkcell/Application/Protocols/SelfConfiguringCell.swift; sourceTree = SOURCE_ROOT; };
 		2635296025AEC3C2007A14BF /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		2635298F25AEC741007A14BF /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		263529A025AECB44007A14BF /* CartRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRequests.swift; sourceTree = "<group>"; };
@@ -113,10 +116,15 @@
 		26353F2925B2D02400C6A155 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		26353F3C25B2D85000C6A155 /* BadConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadConnectionView.swift; sourceTree = "<group>"; };
 		26353F4125B2D85700C6A155 /* BadConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadConnectionView.xib; sourceTree = "<group>"; };
+		263F24EB25B30F2C0080416B /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		263F24F325B30F550080416B /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		263F24FC25B494990080416B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		263F250725B4C6400080416B /* CartItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemResponse.swift; sourceTree = "<group>"; };
+		263F250F25B4C6590080416B /* DetailedCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCartItem.swift; sourceTree = "<group>"; };
 		2642802E25B171E60063ED9A /* ServerCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunication.swift; sourceTree = "<group>"; };
 		2642804225B174ED0063ED9A /* ImagesRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRequests.swift; sourceTree = "<group>"; };
 		2644F7D425B2178E008A6E41 /* CartItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemViewModel.swift; sourceTree = "<group>"; };
-		2644F7DC25B21CA1008A6E41 /* DetailedCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCartItem.swift; sourceTree = "<group>"; };
+		2644F7DC25B21CA1008A6E41 /* DetailedCartItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCartItemResponse.swift; sourceTree = "<group>"; };
 		2644F7E125B22853008A6E41 /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		2647D55C25A597DD00EEA578 /* CartItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemViewController.swift; sourceTree = "<group>"; };
 		2647D56125A597F200EEA578 /* CartItemViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CartItemViewController.storyboard; sourceTree = "<group>"; };
@@ -204,7 +212,7 @@
 		2635295E25AEC332007A14BF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				2635294C25AEBD38007A14BF /* SelfConfiguringCell.swift */,
+				263F24EB25B30F2C0080416B /* SelfConfiguringCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -212,9 +220,9 @@
 		2635295F25AEC397007A14BF /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				2644F7E125B22853008A6E41 /* ParsingService.swift */,
 				2635298F25AEC741007A14BF /* AlamofireManager.swift */,
 				2635296025AEC3C2007A14BF /* BaseNetworkService.swift */,
+				2644F7E125B22853008A6E41 /* ParsingService.swift */,
 				2642802E25B171E60063ED9A /* ServerCommunication.swift */,
 				2642804725B174F00063ED9A /* Requests */,
 			);
@@ -224,8 +232,8 @@
 		26353F2325B2CFA900C6A155 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				26353F2425B2CFB400C6A155 /* LoadingView.xib */,
 				26353F2925B2D02400C6A155 /* LoadingView.swift */,
+				26353F2425B2CFB400C6A155 /* LoadingView.xib */,
 			);
 			path = LoadingView;
 			sourceTree = "<group>";
@@ -233,8 +241,8 @@
 		26353F2E25B2D16E00C6A155 /* BadConnectionView */ = {
 			isa = PBXGroup;
 			children = (
-				26353F4125B2D85700C6A155 /* BadConnectionView.xib */,
 				26353F3C25B2D85000C6A155 /* BadConnectionView.swift */,
+				26353F4125B2D85700C6A155 /* BadConnectionView.xib */,
 			);
 			path = BadConnectionView;
 			sourceTree = "<group>";
@@ -251,8 +259,8 @@
 		2647D57125A5B31400EEA578 /* CartCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				2678BA9425A3457000950006 /* CartCollectionViewCell.xib */,
 				2678BA9925A347E200950006 /* CartCollectionViewCell.swift */,
+				2678BA9425A3457000950006 /* CartCollectionViewCell.xib */,
 			);
 			path = CartCollectionViewCell;
 			sourceTree = "<group>";
@@ -333,9 +341,9 @@
 				2678B98125A3241100950006 /* AppDelegate.swift */,
 				2678BA1E25A327E500950006 /* CoreData */,
 				2635295F25AEC397007A14BF /* NetworkLayer */,
-				2635295E25AEC332007A14BF /* Protocols */,
-				2678BA1A25A3279700950006 /* Controllers */,
 				2678BA1B25A3279E00950006 /* Models */,
+				2678BA1C25A327A300950006 /* ViewModels */,
+				2678BA1A25A3279700950006 /* Controllers */,
 				2678BA1D25A327A800950006 /* Views */,
 			);
 			path = Application;
@@ -348,6 +356,7 @@
 				2678BA6925A33E1000950006 /* Reach.swift */,
 				2678BA1925A3276E00950006 /* Extensions */,
 				2678B9FA25A3276B00950006 /* LayoutHelper */,
+				2635295E25AEC332007A14BF /* Protocols */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -365,12 +374,12 @@
 		2678B9FA25A3276B00950006 /* LayoutHelper */ = {
 			isa = PBXGroup;
 			children = (
-				2678B9FB25A3276B00950006 /* UIButtonHelper.swift */,
-				2678B9FC25A3276B00950006 /* NSLayoutHelper.swift */,
 				2678B9FD25A3276B00950006 /* DeviceHelper.swift */,
-				2678B9FE25A3276B00950006 /* UITextViewHelper.swift */,
+				2678B9FC25A3276B00950006 /* NSLayoutHelper.swift */,
+				2678B9FB25A3276B00950006 /* UIButtonHelper.swift */,
 				2678B9FF25A3276B00950006 /* UILabelHelper.swift */,
 				2678BA0025A3276B00950006 /* UITextFieldHelper.swift */,
+				2678B9FE25A3276B00950006 /* UITextViewHelper.swift */,
 			);
 			path = LayoutHelper;
 			sourceTree = "<group>";
@@ -379,9 +388,10 @@
 			isa = PBXGroup;
 			children = (
 				2678BA2F25A329A200950006 /* UIApplication+Extension.swift */,
+				263F24FC25B494990080416B /* UIDevice+Extension.swift */,
 				2678B9E525A3262A00950006 /* UIFont+Extension.swift */,
-				2678B9EC25A3265C00950006 /* UIView+IBInspectable.swift */,
 				2647D56625A5A64700EEA578 /* UIImage+CropRatio.swift */,
+				2678B9EC25A3265C00950006 /* UIView+IBInspectable.swift */,
 				2635294525AEBAB0007A14BF /* UIView+ShakeAnimation.swift */,
 			);
 			path = Extensions;
@@ -390,11 +400,10 @@
 		2678BA1A25A3279700950006 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2647D55C25A597DD00EEA578 /* CartItemViewController.swift */,
+				2678B98525A3241100950006 /* CartViewController.swift */,
 				2678BA3425A32A7800950006 /* RootViewController.swift */,
 				2678BA3C25A32AA900950006 /* SplashViewController.swift */,
-				2678B98525A3241100950006 /* CartViewController.swift */,
-				2647D55C25A597DD00EEA578 /* CartItemViewController.swift */,
-				2678BA1C25A327A300950006 /* ViewModels */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,7 +413,9 @@
 			children = (
 				264F043325B1AC8A00CC30A2 /* Cart.swift */,
 				264F043825B1AC9700CC30A2 /* CartItem.swift */,
-				2644F7DC25B21CA1008A6E41 /* DetailedCartItem.swift */,
+				263F250725B4C6400080416B /* CartItemResponse.swift */,
+				263F250F25B4C6590080416B /* DetailedCartItem.swift */,
+				2644F7DC25B21CA1008A6E41 /* DetailedCartItemResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -412,6 +423,7 @@
 		2678BA1C25A327A300950006 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				263F24F325B30F550080416B /* BaseViewModel.swift */,
 				2644F7D425B2178E008A6E41 /* CartItemViewModel.swift */,
 				264F03BA25B1829300CC30A2 /* CartViewModel.swift */,
 				264F045925B1E05D00CC30A2 /* DataProviders */,
@@ -422,13 +434,13 @@
 		2678BA1D25A327A800950006 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				26353F2E25B2D16E00C6A155 /* BadConnectionView */,
-				26353F2325B2CFA900C6A155 /* LoadingView */,
 				2647D56125A597F200EEA578 /* CartItemViewController.storyboard */,
 				2678BA4925A32C7800950006 /* CartViewController.storyboard */,
-				2678B98F25A3241300950006 /* LaunchScreen.storyboard */,
 				2678BA4425A32C1600950006 /* SplashViewController.storyboard */,
+				26353F2E25B2D16E00C6A155 /* BadConnectionView */,
 				2647D57125A5B31400EEA578 /* CartCollectionViewCell */,
+				2678B98F25A3241300950006 /* LaunchScreen.storyboard */,
+				26353F2325B2CFA900C6A155 /* LoadingView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,9 +448,9 @@
 		2678BA1E25A327E500950006 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				2678B98A25A3241100950006 /* TestTaskTurkcell.xcdatamodeld */,
 				2678BA5C25A337F800950006 /* CoreDataStack.swift */,
 				2678BA6125A3385900950006 /* Query.swift */,
+				2678B98A25A3241100950006 /* TestTaskTurkcell.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -661,7 +673,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				264F03B625B17E9500CC30A2 /* CartDataProvider.swift in Sources */,
-				2644F7DD25B21CA1008A6E41 /* DetailedCartItem.swift in Sources */,
+				263F24EC25B30F2C0080416B /* SelfConfiguringCell.swift in Sources */,
+				2644F7DD25B21CA1008A6E41 /* DetailedCartItemResponse.swift in Sources */,
 				2642802F25B171E60063ED9A /* ServerCommunication.swift in Sources */,
 				2635299025AEC741007A14BF /* AlamofireManager.swift in Sources */,
 				2678B9ED25A3265C00950006 /* UIView+IBInspectable.swift in Sources */,
@@ -679,19 +692,22 @@
 				2642804325B174ED0063ED9A /* ImagesRequests.swift in Sources */,
 				2644F7E225B22853008A6E41 /* ParsingService.swift in Sources */,
 				264F043425B1AC8A00CC30A2 /* Cart.swift in Sources */,
+				263F24F425B30F550080416B /* BaseViewModel.swift in Sources */,
 				2678B9E625A3262A00950006 /* UIFont+Extension.swift in Sources */,
+				263F251025B4C6590080416B /* DetailedCartItem.swift in Sources */,
 				2678BA3D25A32AA900950006 /* SplashViewController.swift in Sources */,
 				2678BA0D25A3276B00950006 /* UILabelHelper.swift in Sources */,
 				2644F7D525B2178E008A6E41 /* CartItemViewModel.swift in Sources */,
 				2678BA3525A32A7800950006 /* RootViewController.swift in Sources */,
 				26353F3D25B2D85000C6A155 /* BadConnectionView.swift in Sources */,
 				264F043925B1AC9700CC30A2 /* CartItem.swift in Sources */,
+				263F250825B4C6400080416B /* CartItemResponse.swift in Sources */,
 				264F03BB25B1829300CC30A2 /* CartViewModel.swift in Sources */,
 				2647D56725A5A64700EEA578 /* UIImage+CropRatio.swift in Sources */,
 				2678BA0725A3276B00950006 /* DeviceHelper.swift in Sources */,
 				264F042F25B1A91700CC30A2 /* ImageProvider.swift in Sources */,
-				2635294D25AEBD38007A14BF /* SelfConfiguringCell.swift in Sources */,
 				2678BA9A25A347E200950006 /* CartCollectionViewCell.swift in Sources */,
+				263F24FD25B494990080416B /* UIDevice+Extension.swift in Sources */,
 				2678BA0425A3276B00950006 /* NSLayoutHelper.swift in Sources */,
 				263529A125AECB44007A14BF /* CartRequests.swift in Sources */,
 				2635294625AEBAB0007A14BF /* UIView+ShakeAnimation.swift in Sources */,

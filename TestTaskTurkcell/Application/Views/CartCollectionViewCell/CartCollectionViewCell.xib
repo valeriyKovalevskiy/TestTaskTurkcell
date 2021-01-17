@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -30,7 +30,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="749" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZLS-Ll-v0C">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="225"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="266.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZLS-Ll-v0C" secondAttribute="height" multiplier="4:3" id="DTn-f1-i7G"/>
                                     <constraint firstAttribute="width" secondItem="ZLS-Ll-v0C" secondAttribute="height" multiplier="1:1" id="o2x-ab-568"/>
@@ -52,10 +52,10 @@
                                 </variation>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D2Z-Ir-tb2">
-                                <rect key="frame" x="0.0" y="235" width="500" height="65"/>
+                                <rect key="frame" x="0.0" y="276.5" width="500" height="23.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Food Food Food Food " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlq-ob-DR8">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price $$$" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqK-Vi-fQ2">
-                                        <rect key="frame" x="0.0" y="49.5" width="500" height="15.5"/>
+                                        <rect key="frame" x="255" y="0.0" width="245" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -104,8 +104,7 @@
                     <constraint firstItem="ZLS-Ll-v0C" firstAttribute="width" secondItem="bEr-qx-kTP" secondAttribute="width" multiplier="0.8" id="Cbt-QF-7tA"/>
                     <constraint firstAttribute="trailing" secondItem="ka7-RC-3zv" secondAttribute="trailing" id="SMW-fs-BFH"/>
                     <constraint firstItem="ZLS-Ll-v0C" firstAttribute="height" secondItem="bEr-qx-kTP" secondAttribute="height" id="hEY-LH-dvx"/>
-                    <constraint firstItem="ZLS-Ll-v0C" firstAttribute="width" secondItem="bEr-qx-kTP" secondAttribute="width" id="mwY-8A-bPl"/>
-                    <constraint firstItem="ZLS-Ll-v0C" firstAttribute="height" relation="lessThanOrEqual" secondItem="bEr-qx-kTP" secondAttribute="height" multiplier="0.75" id="w7H-VI-PJW"/>
+                    <constraint firstItem="ZLS-Ll-v0C" firstAttribute="height" secondItem="bEr-qx-kTP" secondAttribute="height" multiplier="0.75" id="w7H-VI-PJW"/>
                     <constraint firstAttribute="bottom" secondItem="ka7-RC-3zv" secondAttribute="bottom" id="w8y-JM-El3"/>
                     <constraint firstItem="ka7-RC-3zv" firstAttribute="top" secondItem="bEr-qx-kTP" secondAttribute="top" id="z4U-gh-wSM"/>
                 </constraints>
@@ -113,7 +112,6 @@
                     <mask key="constraints">
                         <exclude reference="Cbt-QF-7tA"/>
                         <exclude reference="hEY-LH-dvx"/>
-                        <exclude reference="mwY-8A-bPl"/>
                         <exclude reference="w7H-VI-PJW"/>
                     </mask>
                 </variation>
@@ -121,7 +119,6 @@
                     <mask key="constraints">
                         <exclude reference="Cbt-QF-7tA"/>
                         <exclude reference="hEY-LH-dvx"/>
-                        <include reference="mwY-8A-bPl"/>
                     </mask>
                 </variation>
                 <variation key="widthClass=compact">

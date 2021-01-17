@@ -20,6 +20,7 @@ final class CartViewController: UIViewController {
     }
     
     // MARK: - Properties
+    private var additionalPadding: CGFloat = 0
     var viewModel = CartViewModel() {
         didSet {
             viewModel.delegate = self
@@ -37,11 +38,14 @@ final class CartViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
+        configureAdditionalPadding()
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
     // MARK: - Private
     private func setupCollectionView() {
+        configureAdditionalPadding()
+        
         let nib = UINib(nibName: CartCollectionViewCell.reuseIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: CartCollectionViewCell.reuseIdentifier)
         collectionView.delegate = self
@@ -56,9 +60,17 @@ final class CartViewController: UIViewController {
         collectionView.addSubview(refreshControl)
     }
     
-    // MARK: - Actions
     @objc private func refreshView(sender: UIRefreshControl) {
         viewModel.downloadCartItems()
+    }
+    
+    private func configureAdditionalPadding() {
+        if UIDevice.iPhoneXRorMore {
+            UIDevice.current.orientation.isLandscape ?
+                (additionalPadding = 100) :
+                (additionalPadding = 0)
+            
+        }
     }
 }
 
@@ -103,24 +115,12 @@ extension CartViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        //        let selectedCell = collectionView.cellForItem(at: indexPath)
-        //        selectedCell?.isUserInteractionEnabled = false
-        let item = viewModel.cartItems[indexPath.item]
-        
-        viewModel.downloadDetailedItem(item: item.id) { [weak self] item in
-            let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
-            if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
-                controller.image = item.image
-                controller.nameText = item.name
-                controller.descriptionText = item.description
-                controller.priceText = "\(item.price)"
-                //                selectedCell?.isUserInteractionEnabled = true
-                self?.navigationController?.pushViewController(controller, animated: true)
-            }
-            
+        let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
+            controller.id = viewModel.cartItems[indexPath.item].id
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
-    
 }
 
 // MARK: - Collection View Data Source
@@ -156,7 +156,7 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
         let itemsPerRow = UIDevice.current.orientation.isPortrait ? verticalItemsPerRow : horizontalItemsPerRow
         let sectionInsets = Constants.Layout.CollectionViewEdgeInsets
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
+        let availableWidth = view.frame.width - paddingSpace - additionalPadding
         let itemWidth = availableWidth / itemsPerRow
         let itemHeight = UIDevice.current.orientation.isPortrait ? view.frame.height / 3 : view.frame.height / 2
         

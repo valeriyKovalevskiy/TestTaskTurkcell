@@ -11,20 +11,44 @@ final class CartItemViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
-    var image: UIImage?
-    var nameText: String?
-    var descriptionText: String?
-    var priceText: String?
+    // MARK: - Properties
+    var viewModel = CartItemViewModel()
     
+    var id: String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageView.image = image
-        nameLabel.text = nameText
-        descriptionLabel.text = descriptionText
-        priceLabel.text = priceText
+        viewModel.delegate = self
+        viewModel.downloadDetailedItem(item: id)
     }
+}
+
+extension CartItemViewController: CartItemViewModelDelegate {
+    func updateUI(for state: CartItemViewModel.ViewState) {
+        DispatchQueue.main.async {
+            switch state {
+            case .loaded:
+                self.title = "loaded"
+                
+                let detailedItem = self.viewModel.detailedCartItem
+                self.imageView.image = detailedItem?.image
+                self.nameLabel.text = detailedItem?.name
+                self.descriptionLabel.text = detailedItem?.description
+                self.priceLabel.text = "\(String(describing: detailedItem?.price))"
+                
+            case .badConnection:
+                self.title = "bad connection"
+
+            case .loading:
+                self.title = "loading"
+                
+            default:
+                self.title = "feed"
+            }
+        }
+    }
+        
 }
