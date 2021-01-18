@@ -7,20 +7,22 @@
 
 import UIKit
 
-final class ImageProvider {
+typealias ImageCompletionBlock = (_ response: UIImage?, _ error: Error?) -> Void
 
-    func loadImage(from imageUrl: String, completion: @escaping (UIImage) -> Void) {
-        
-        ServerCommunication.getImage(from: imageUrl, completion: { [weak self] (response, error) in
+final class ImageProvider {
+    func loadImage(from imageUrl: String, completion: @escaping ImageCompletionBlock) {
+        ServerCommunication.getImage(from: imageUrl, completion: {(response, error) in
             if let error = error {
-                // TODO: - handle errors
+                completion(nil, error)
+            }
+
+            guard let response = response, let image = response["image"] as? UIImage else {
+                completion(nil, nil)
+                return
             }
             
-            if let response = response, let image = response["image"] as? UIImage {
-                completion(image)
-            } else {
-                print("bad response \(response)")
-            }
+            completion(image, nil)
+
         }, progressHandler: { _ in })
     }
 }

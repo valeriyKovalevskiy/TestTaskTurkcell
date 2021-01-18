@@ -17,10 +17,6 @@ final class SplashViewController: UIViewController {
 
         createNetworkingRequests()
     }
-    
-    deinit {
-        print("splash was deinit")
-    }
 
     // MARK: - Private Methods
     private func createNetworkingRequests() {

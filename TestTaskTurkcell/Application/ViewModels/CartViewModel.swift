@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CartViewModelDelegate: AnyObject {
     func updateUI(for state: CartViewModel.ViewState)
@@ -43,8 +44,17 @@ final class CartViewModel: BaseViewModel {
             let responseItem = $0
             guard isReachable else { return viewState = .badConnection }
             
-            self.imageProvider.loadImage(from: responseItem.imageUrl) { image in
-                self.cartItems.append(CartItem(id: responseItem.id,
+            self.imageProvider.loadImage(from: responseItem.imageUrl) { [weak self] image, error in
+                guard let image = image else {
+                    self?.viewState = .badResponse
+                    return
+                }
+                
+                if let error = error {
+                    self?.viewState = .error(error)
+                }
+                
+                self?.cartItems.append(CartItem(id: responseItem.id,
                                                name: responseItem.name,
                                                price: responseItem.price,
                                                image: image))
@@ -57,8 +67,27 @@ final class CartViewModel: BaseViewModel {
         guard isReachable else { return viewState = .badConnection }
         
         viewState = .loading
-        dataProvider.loadCartList { [weak self] result in
-            self?.cartResponse = result
+        dataProvider.loadCartList { [weak self] response, error in
+            guard let itemResponse = response else {
+                self?.viewState = .badResponse
+                return
+            }
+            
+            if let error = error {
+                self?.viewState = .error(error)
+            }
+            
+            self?.cartResponse = itemResponse
         }
-    }    
+    }
+    
+    func navigateToCartItemViewController(for indexPath: IndexPath, from viewController: UIViewController, completion: (() -> Void)? = nil) {
+        let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
+            controller.item = cartItems[indexPath.item]
+            controller.viewModel = CartItemViewModel()
+            viewController.navigationController?.pushViewController(controller, animated: true)
+            completion?()
+        }
+    }
 }

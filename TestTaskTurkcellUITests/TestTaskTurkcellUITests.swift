@@ -2,7 +2,7 @@
 //  TestTaskTurkcellUITests.swift
 //  TestTaskTurkcellUITests
 //
-//  Created by Valeriy Kovalevskiy on 1/4/21.
+//  Created by Valeriy Kovalevskiy on 1/15/21.
 //
 
 import XCTest

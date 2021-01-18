@@ -39,8 +39,7 @@ enum Requests {
                                    successHandler: NetworkSuccessHandler) {
         
         if let errorDict = response?["error"] as? [String: Any] {
-//           let error = IMError(errorDict: errorDict) {
-//            errorHandler(error)
+            // TODO: - Handle error
         } else {
             successHandler(response)
         }
@@ -52,7 +51,6 @@ enum Requests {
         
         if response.result.isSuccess {
             if  let data = response.result.value as? [String: AnyObject] {
-                print("Response url processing... \(String(describing: response.response?.url))")
                 BaseNetworkService.handleResponseData(data, errorHandler: errorHandler, successHandler: successHandler)
             } else if let data = response.result.value as? [[String: AnyObject]] {
                 BaseNetworkService.handleResponseData(["data": data], errorHandler: errorHandler, successHandler: successHandler)
@@ -91,11 +89,10 @@ enum Requests {
             if let image = response.result.value {
                 successHandler(["image": image])
             } else {
-//                errorHandler(IMError.unknownError())
+                // TODO: - Handle error
             }
         }
         
-        print("request = \(request)")
         return request
     }
 

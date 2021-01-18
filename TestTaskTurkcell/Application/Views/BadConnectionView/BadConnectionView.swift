@@ -54,10 +54,6 @@ final class BadConnectionView: UIView {
         }
     }
     
-    deinit {
-        print("was deinitted bad connection")
-    }
-    
     // MARK: - Open
     func show() {
         NotificationCenter.default.addObserver(self,

@@ -14,6 +14,7 @@ final class CartCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
     @IBOutlet private weak var desctiptionLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
 
+    // MARK: - Open
     func update(name: String,
                 price: String,
                 image: UIImage) {
@@ -21,7 +22,4 @@ final class CartCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         priceLabel.text = price
         imageView.image = image
     }
-
 }
-
-

@@ -7,31 +7,37 @@
 
 import Foundation
 
+typealias CartCompletionBlock = (_ response: Cart?, _ error: Error?) -> Void
+typealias ItemCompletionBlock = (_ response: DetailedCartItemResponse?, _ error: Error?) -> Void
+
 final class CartDataProvider {
-    func loadCartList(completion: @escaping (Cart) -> Void) {
+    func loadCartList(completion: @escaping CartCompletionBlock) {
         ServerCommunication.getCartList { (response, error) in
             if let error = error {
-                // TODO: - Handle
-            }
-            if let response = ParsingService<Cart>().parseObject(response) {
-                completion(response)
-            } else {
-                print("bad response \(response)")
-            }
-        }
-    }
-    
-    func loadItem(_ item: String, completion: @escaping (DetailedCartItemResponse) -> Void) {
-        ServerCommunication.getCartItemDetails(item: item) { (response, error) in
-            if let error = error {
-                // TODO: - Handle
+                completion(nil, error)
             }
             
-            if let response = ParsingService<DetailedCartItemResponse>().parseObject(response) {
-                completion(response)
-            } else {
-                print("bad response \(response)")
+            guard let response = ParsingService<Cart>().parseObject(response) else {
+                completion(nil, nil)
+                return
             }
+            
+            completion(response, nil)
+        }
+    }
+
+    func loadItem(_ item: String, completion: @escaping ItemCompletionBlock) {
+        ServerCommunication.getCartItemDetails(item: item) { (response, error) in
+            if let error = error {
+                completion(nil, error)
+            }
+            
+            guard let response = ParsingService<DetailedCartItemResponse>().parseObject(response) else {
+                completion(nil, nil)
+                return
+            }
+            
+            completion(response, nil)
         }
     }
 }

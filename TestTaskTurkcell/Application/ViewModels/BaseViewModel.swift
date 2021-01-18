@@ -17,6 +17,8 @@ internal class BaseViewModel {
         case loaded
         case loading
         case badConnection
+        case badResponse
+        case error(Error)
         case unknown
     }
     

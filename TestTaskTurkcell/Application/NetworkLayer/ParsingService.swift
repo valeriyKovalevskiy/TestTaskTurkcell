@@ -34,18 +34,4 @@ final class ParsingService<T> where T: Any, T: Codable {
         }
         return nil
     }
-    
-    @discardableResult
-    func parse(_ response: [[String: Any]]?) -> [T]? {
-        if response?.count > 0 {
-            if let data = try? JSONSerialization.data(withJSONObject: response, options: []) {
-                let decoder = JSONDecoder()
-                if let decoded = try? decoder.decode([T].self, from: data) {
-                    return decoded
-                }
-            }
-        }
-        return nil
-    }
-
 }

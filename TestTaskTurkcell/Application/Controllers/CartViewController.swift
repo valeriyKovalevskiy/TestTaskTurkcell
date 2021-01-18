@@ -97,6 +97,12 @@ extension CartViewController: CartViewModelDelegate {
                 self.loadingView.show()
                 self.collectionView.reloadData()
                 
+            case .badResponse:
+                self.title = "bad response"
+            
+            case .error(let error):
+                self.title = error.localizedDescription
+                
             default:
                 self.title = "feed"
                 self.collectionView.reloadData()
@@ -110,16 +116,13 @@ extension CartViewController: BadConnectionViewDelegate {
         viewModel.downloadCartItems()
     }
 }
+
 // MARK: - Collection View Delegate
 extension CartViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: Constants.Controllers.CartItemViewController, bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.CartItemViewController) as? CartItemViewController {
-            controller.id = viewModel.cartItems[indexPath.item].id
-            navigationController?.pushViewController(controller, animated: true)
-        }
+        viewModel.navigateToCartItemViewController(for: indexPath, from: self)
     }
 }
 

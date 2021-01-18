@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+// TODO: - Implement coredata
 final class CoreDataStack {
     
     static let sharedInstance = CoreDataStack()
@@ -62,7 +63,7 @@ final class CoreDataStack {
                 at: self.storeURL,
                 options: options
             )
-            print("Persistant store loaded")
+            // print("Persistant store loaded")
         } catch let error {
             assertionFailure("Failed to add persistent store with error = \(error)\n aborting...")
         }
@@ -73,7 +74,6 @@ final class CoreDataStack {
             try managedObjectContext.save()
         } catch {
             //TODO: Handle error properly
-            print(error)
         }
     }
     
