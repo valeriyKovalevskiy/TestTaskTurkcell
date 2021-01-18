@@ -33,6 +33,7 @@ final class CartItemViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
+        view.setNeedsUpdateConstraints()
         configureTextAlignment()
     }
     
@@ -63,7 +64,7 @@ extension CartItemViewController: CartItemViewModelDelegate {
                 self.title = "loading"
                 self.imageView.image = self.item.image
                 self.nameLabel.text = self.item.name
-                self.descriptionLabel.text = "Description was missed"
+                self.descriptionLabel.text = "Loading..."
                 self.priceLabel.text = "\(String(describing: self.item.price)) $"
                 
             case .badResponse:
